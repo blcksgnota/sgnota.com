@@ -34,9 +34,74 @@
     <script
       async
       src="https://cdn.splitbee.io/sb.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PVYBZJSBXZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PVYBZJSBXZ");
+    </script>
   </head>
 
   <body>
+    <script>
+      const projects = [
+        {
+          name: "Onyx UI",
+          link: "https://onyxui.com/?ref=sgnota.com",
+          description:
+            "— is a component library that provides the building blocks needed to create an accessible website with speed ⚡️ — Coming in 2022.",
+          logo: "/assets/logos/onyxui.svg",
+          alt: "Onyx UI — Webflow & Elementor Components Library",
+        },
+        {
+          name: "FluirCloud",
+          link: "https://fluircloud.com/?ref=sgnota.com",
+          description:
+            "— makes the cloud simple with predictable pricing, developer-friendly features, and scalability you’ll love.",
+          logo: "/assets/logos/fluircloud.svg",
+          alt: "FluirCloud Logo",
+        },
+        {
+          name: "Dribbble",
+          link: "https://dribbble.com/blcksgnota?ref=sgnota.com",
+          description:
+            "— a visual timeline of some of my beautifully crafted visual design for software and web applications since 2018.",
+          logo: "/assets/logos/dribbble.png",
+          alt: "",
+        },
+      ];
+
+      for (i = 0; i < projects.length; i++) {
+        let project = projects[i];
+        // Generate an infowindow content for the marker
+        let card = `
+        <div class="project-card flex flex-col">
+
+          <div class="project-icon mb-6 h-14 w-14 rounded-full bg-indigo-600">
+            <a href="${project.link}" target="_blank">
+              <img src="${project.logo}" alt="$" class="w-full" />
+            </a>
+          </div>
+
+          <p class="text-start text-lg font-normal text-slate-500">
+            <a  class="font-semibold text-slate-700 antialiased duration-100 ease-in-out hover:text-hun" href="${project.link}" target="_blank">
+                  ${project.name}
+            </a>
+            ${project.description}
+          </p>
+
+        </div>
+        `;
+
+        document.querySelector("#projects").innerHTML = card;
+      }
+    </script>
     <div
       class="relative flex flex-col content-center items-center justify-center overflow-hidden lg:h-screen lg:overflow-hidden">
       <!-- Guides Wrapper -->
@@ -76,7 +141,7 @@
         </a>
 
         <div
-          class="title-grid grid grid-cols-1 items-end gap-y-16 text-start lg:grid-cols-3 lg:gap-8">
+          class="title-grid grid grid-cols-3 items-end gap-y-16 text-start lg:grid-cols-3 lg:gap-8">
           <div
             class="hero-title col-span-2 flex flex-col content-start justify-start">
             <div
@@ -114,7 +179,11 @@
             class="mb-8 self-start font-display text-2xl font-bold text-slate-800">
             Things i tynker on:
           </h2>
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+
+          <!-- PROJECT I WORK ON-->
+          <div
+            id="projects"
+            class="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div class="project-card flex flex-col">
               <div
                 class="project-icon mb-6 h-14 w-14 rounded-full bg-indigo-600">

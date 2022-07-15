@@ -1,27 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
-        'hun': '#4D26E0',
+        transparent: "transparent",
+        current: "currentColor",
+        hun: "#4D26E0",
       },
       fontFamily: {
-        'display': ['Syne', 'sans-serif'],
-        'body': ['Klima', 'sans-serif'],
+        display: ["Syne", "sans-serif"],
+        body: ["Red Hat Display", "sans-serif"],
       },
       backgroundImage: {
-        'desktop': "url('/assets/desktop-noise.png')",
-        'mobile': "url('/assets/mobile-noise.png')",
-      }
+        desktop: "url('/assets/desktop-noise.png')",
+        mobile: "url('/assets/mobile-noise.png')",
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-}
+  plugins: [require("@tailwindcss/typography")],
+};
